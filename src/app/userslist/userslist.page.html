@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Lista de Usuarios</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-list *ngFor="let user of users; let i=index ">
+            <ion-item (click)="onClick(i)">
+                <ion-avatar slot="start">
+                    <img src="{{user.picture.large}}" alt="">
+                </ion-avatar>
+                <ion-label> {{user.name.title}} {{user.name.first}} {{user.name.last}}</ion-label>
+            </ion-item>
+        </ion-list>
+
+    </ion-list>
+</ion-content>
